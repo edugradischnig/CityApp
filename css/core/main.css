@@ -1,0 +1,138 @@
+:root {
+	--cor-principal-1:#282a36;
+	--cor-principal-2:#44475a;
+	--cor-principal-3:#50fa7b;
+	--cor-principal-4:#bd93f9;
+	--cor-principal-5:#ff79c6;
+
+	--cor-branco-1:#fff;
+	--cor-branco-2:rgba(255,255,255,0.70);
+	--cor-branco-3:rgba(255,255,255,0.50);
+	--cor-branco-4:rgba(255,255,255,0.30);
+
+	--cor-preto-1:rgba(0,0,0,0.87);
+	--cor-preto-2:rgba(0,0,0,0.60);
+	--cor-preto-3:rgba(0,0,0,0.38);
+	--cor-preto-4:rgba(0,0,0,0.26);
+}
+
+
+
+*, *::before, *::after { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address,
+big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time,
+mark, audio, button, video, input { padding:0; border:none; margin:0; font:inherit; font-size:100%; vertical-align:baseline; }
+article, aside, button, details, figcaption, figure, footer, header, hgroup, menu, main, nav, section { display:block; }
+
+ul, ol { list-style:none; }
+blockquote:before, blockquote:after, q:before, q:after { content:""; content:none; }
+blockquote, q { quotes:none; }
+img { vertical-align:bottom; }
+table { border-collapse:collapse; border-spacing:0; }
+
+
+
+@font-face {
+	font-family:"Material Icons Round"; font-style:normal; font-weight:400;
+	src:url("../../fonts/Material-Icons-Round.woff2") format("woff2");
+}
+@font-face {
+	font-display:swap; font-family:"Montserrat"; font-style:normal; font-weight:400;
+	src:url("../../fonts/Montserrat-Regular.woff2") format("woff");
+}
+
+
+
+html { width:100%; overflow-x:hidden; font-size:100%; line-height:1; background:var(--cor-principal-1); }
+body {
+	width:100%; min-width:320px;
+	font-family:"Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:var(--cor-preto-2); line-height:1; word-wrap:break-word;
+	-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%;
+}
+
+
+
+a { text-decoration:none; cursor:pointer; }
+button { background:none; cursor:pointer; }
+
+label { color:var(--cor-branco-1); }
+
+
+
+/* ---- Gerais ---- */
+
+
+
+.mi, .mi--b::before, .mi--a::after {
+	display:inline-block; overflow:hidden; -moz-font-feature-settings:"liga"; -moz-osx-font-smoothing:grayscale;
+	direction:ltr; font-family:"Material Icons Round"; font-size:24px; font-style:normal; font-weight:normal;
+	letter-spacing:normal; line-height:1; text-transform:none; white-space:nowrap; word-wrap:normal;
+}
+
+
+
+.botao {
+	height:36px; padding:6px 12px; display:inline-flex; align-items:center;
+	color:var(--cor-preto-1); font-size:14px; line-height:24px; text-transform:uppercase;
+	border-radius:4px; opacity:1;
+	transition:opacity 0.2s;
+}
+.botao::after {
+	width:24px; height:24px; margin:0 -4px 0 4px; flex-shrink:0;
+	color:var(--cor-preto-1); content:"chevron_right"; transition:color 0.2s;
+}
+
+.botao:focus,
+.botao:hover { opacity:0.7; }
+.botao:focus::after,
+.botao:hover::after { color:var(--cor-preto-2); }
+
+
+
+.box { background-color:var(--cor-preto-4);  }
+.clear-both::after { content:""; width:100%; height:0; clear:both; display:block; overflow:hidden; }
+.display-flex { display:flex; align-items:center; justify-content:flex-start; }
+
+/* ---- Pode mudar ---- */
+
+.envelope { max-width:1280px; padding:48px 16px; margin-left:auto; margin-right:auto; }
+.envelope--m { max-width:960px; }
+.envelope--p { max-width:640px; }
+
+.envelope__secao { margin-top:48px; }
+
+@media screen and (min-width:720px) {
+	.envelope { padding:48px 24px; }
+}
+
+@media screen and (min-width:1120px) {
+	.envelope { padding:64px 40px; }
+	.envelope__secao { margin-top:64px; }
+}
+
+/* --------------------- */
+
+.texto-titulo { color:var(--cor-principal-4); font-weight:medium; }
+
+.texto-titulo--h1 { font-size:32px; line-height:36px; }
+.texto-titulo--h2 { font-size:24px; line-height:28px; }
+.texto-titulo--h3 { font-size:20px; line-height:24px; }
+.texto-titulo--h4 { font-size:16px; line-height:20px; }
+
+.texto-corpo { color:var(--cor-branco-1); font-size:14px; line-height:24px; }
+.texto-legenda { color:var(--cor-branco-1); font-size:12px; line-height:16px; }
+
+
+.objeto-recipiente {
+	width:100%; height:0; padding-bottom:100%;
+	overflow:hidden; position:relative;
+}
+.objeto-conteudo {
+	width:100%; height:100%;
+	position:absolute; top:0; left:0;
+	object-fit:cover; object-position:center;
+}
