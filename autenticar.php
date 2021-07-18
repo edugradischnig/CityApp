@@ -1,7 +1,10 @@
 <?php
+session_start();
+
 if ($_POST['email'] == "teste@gmail.com" && $_POST['senha'] == "123"){
-    echo "Sessao iniciada";
+    $_SESSION['email'] = "teste@gmail.com";
+    header("location: index.php");
 }else{
-    echo "Usuário e/ou senha incorretas";
+    header("location: index.php");
 }
 ?>

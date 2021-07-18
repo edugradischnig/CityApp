@@ -24,8 +24,11 @@
 </body>
 </html>
 
-<!-- Verificar nessa página se já existe uma sessão ativa-->
 
 <?php
+session_start();
 
+if(isset($_SESSION['email'])){
+    header("location: main.php");
+}
 ?>
