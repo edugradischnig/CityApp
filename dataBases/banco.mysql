@@ -1,0 +1,20 @@
+CREATE DATABASE cityapp;
+USE cityapp;
+
+CREATE TABLE usuarioComum(
+	cpf int(11) NOT NULL,
+    email varchar(50) NOT NULL,
+    senha_hash varchar(255) NOT NULL,
+    nome varchar(30) NOT NULL,
+    sobrenome varchar(30) NOT NULL,
+    PRIMARY KEY(cpf)
+);
+
+CREATE TABLE usuarioPrefeitura(
+	id int(5) NOT NULL AUTO_INCREMENT,
+    email varchar (50) NOT NULL,
+    senha_hash varchar(255) NOT NULL,
+    nome varchar(35) NOT NULL,
+    estado varchar (30) NOT NULL,
+    PRIMARY KEY (id)
+);

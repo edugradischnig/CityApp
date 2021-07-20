@@ -8,6 +8,10 @@
 </head>
 <body>
     <a href="finalizarSessao.php">Sair</a>
+
+    <a href="funcoes.php" id="btn-fun"><img src="images/abrir-funcoes.png" style="float: right;"></a>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>
 
