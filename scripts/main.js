@@ -1,5 +1,8 @@
-/*const botaoFuncoes = document.querySelector("#btn-fun");
+let map;
 
-botaoFuncoes.addEventListener("click", function(event){
-    
-}); */
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+}
