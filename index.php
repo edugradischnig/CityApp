@@ -10,32 +10,6 @@
     <link rel="stylesheet" href="css/core/main.css">
 </head>
 <body>
-    <style>
-        .topo__icone { 
-            width:32px; height:32px; margin-left:8px; 
-            font-size:32px; flex-shrink:0;
-            color:var(--cor-principal-4); 
-        }
-
-        .topo__subtitulo {
-            color:var(--cor-branco-1); font-weight:bold;
-        }
-
-        .form { align-items:flex-start; flex-direction:column; }
-
-        .form + .form { margin-top:8px; }
-
-        .form-container { width:100%; display:block; }
-        .form-container + .form-container { margin-top:16px; }
-
-        .form-label { margin-bottom:8px; color:var(--cor-branco-1); font-size:12px; line-height:1;}
-    
-        .form-input { 
-            width:100%; height:40px; padding:9px 15px;
-            border:1px solid rgba(0, 0, 0, 0.12); color:var(--color-preto-2); 
-            font-size:14px; line-height:20px; 
-        }
-    </style>
     <section class="envelope envelope--p">
         <header class="display-flex">    
             <h1 class="texto-titulo texto-titulo--h1">CityApp</h1>
@@ -57,7 +31,7 @@
                 <div class="display-flex" style="margin-top:16px;">
                     <input type="submit" value="Entre" class="botao mi--a" style="background-color:var(--cor-principal-3);">
                     <span class="texto-corpo" style="margin:0 8px;">ou</span>
-                    <a href="cadastrar.html" class="botao mi--a" style="background-color:var(--cor-principal-5);">Cadastre-se</a>
+                    <a href="cadastrar.php" class="botao mi--a" style="background-color:var(--cor-principal-5);" data-icone="chevron_right">Cadastre-se</a>
                 </div>
             </form>
         </div>
