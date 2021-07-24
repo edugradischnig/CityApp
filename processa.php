@@ -1,6 +1,6 @@
 <?php
 include_once "conexao.php";
-
+session_start();
 
 if(isset($_POST['cpf'])){
 
@@ -12,7 +12,7 @@ if(isset($_POST['cpf'])){
 
     $query = "insert into usuariocomum (cpf, email, senha_hash, nome, sobrenome) values (".$cpf.",'".$email."','".$hash."','".$nome."','".$sobrenome."')";
     mysqli_query($connection, $query);
-
+    $_SESSION['email'] = $email;
     header("location: main.php");
 
 }else if(isset($_POST['codigo'])){
@@ -24,7 +24,7 @@ if(isset($_POST['cpf'])){
 
     $query = "insert into usuarioprefeitura (codigo_autorizacao, email, senha_hash, nome, estado) values (".$codigo.",'".$email."','".$hash."','".$cidade."','".$estado."')";
     mysqli_query($connection, $query);
-
+    $_SESSION['email'] = $email;
     header("location: main.php");
 
 }else{

@@ -33,6 +33,9 @@
                     <span class="texto-corpo" style="margin:0 8px;">ou</span>
                     <a href="cadastrar.php" class="botao mi--a" style="background-color:var(--cor-principal-5);" data-icone="chevron_right">Cadastre-se</a>
                 </div>
+                <div id="erro" style="visibility: hidden; color: red">
+                    <h4>Email ou senha incorretos</h4>  <!-- Precisamos verificar se o usuario logou-->
+                </div>
             </form>
         </div>
     </section>
@@ -42,7 +45,6 @@
 
 <?php
 session_start();
-
 if(isset($_SESSION['email'])){
     header("location: main.php");
 }
