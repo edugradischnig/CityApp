@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preload" href="fonts/MaterialIconsRound-Regular.woff2" as="font">
-    <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font">
     <link rel="stylesheet" href="css/core/main.css">
 </head>
 <body> <!-- VERIFICAR ENTRADAS COM JS ANTES DE SALVAR NO BANCO-->

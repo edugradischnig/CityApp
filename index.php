@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preload" href="fonts/MaterialIconsRound-Regular.woff2" as="font">
-    <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font">
     <link rel="stylesheet" href="css/core/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     <section class="envelope envelope--p">
         <header class="display-flex">    
             <h1 class="texto-titulo texto-titulo--h1">CityApp</h1>
-            <i class="topo__icone mi">coronavirus</i>
+            <i class="topo__icone mi">maps_home_work</i>
         </header>
         <h2 class="topo__subtitulo texto-titulo texto-titulo--h4" style="margin-top:16px;">Entre e faça parte dos mais de 50 milhões de usuários</h2>
         <div class="box" style="padding:32px 24px; margin-top:16px;">
