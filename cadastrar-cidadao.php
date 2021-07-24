@@ -17,27 +17,27 @@
         </header>
         <h2 class="topo__subtitulo texto-titulo texto-titulo--h4" style="margin-top:16px;">Insira seus dados pessoais para realizar o seu cadastro.</h2>
         <div class="box" style="padding:32px 24px; margin-top:16px;">
-        <form action="main.php" method="$_POST">
+        <form action="processa.php" method="POST">
             <div class="form-container">
                 <div class="form-label">Nome:</div>
-                <input type="text" name="nome" placeholder="Ex.: João" class="form-input">
+                <input type="text" name="nome" placeholder="Ex.: João" class="form-input" required>
             </div>
             <div class="form-container">
                 <div class="form-label">Sobrenome:</div>
-                <input type="text" name="sobrenome" placeholder="Ex.: Loriston" class="form-input">
+                <input type="text" name="sobrenome" placeholder="Ex.: Loriston" class="form-input" required>
             </div>
             <div class="form-container">
                 <div class="form-label">CPF:</div>
                 <input type="text" name="cpf" \
-                pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" \ placeholder="Ex.: 999.999.999-99" class="form-input"> <br>
+                pattern="\d{3}\d{3}\d{3}\d{2}" \ placeholder="Ex.: 999.999.999-99" class="form-input" required> <br>
             </div>
             <div class="form-container">
                 <div class="form-label">Email:</div>
-                <input type="email" name="email" placeholder="Ex.: joaoloriston@gmail.com" class="form-input">
+                <input type="email" name="email" placeholder="Ex.: joaoloriston@gmail.com" class="form-input" required>
             </div>
             <div class="form-container">
                 <div class="form-label">Senha:</div>
-                <input type="password" name="senha" placeholder="Digite uma senha" class="form-input">
+                <input type="password" name="senha" placeholder="Digite uma senha" class="form-input" required>
             </div>
             <input type="submit" value="Cadastra-se" class="botao mi--a" style="margin-top:16px; background-color:var(--cor-principal-3);">
         </form>

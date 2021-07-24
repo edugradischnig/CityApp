@@ -17,7 +17,7 @@
         </header>
         <h2 class="topo__subtitulo texto-titulo texto-titulo--h4" style="margin-top:16px;">Insira os dados da sua prefeitura para realizar o cadastro.</h2>
         <div class="box" style="padding:32px 24px; margin-top:16px;">
-            <form action="main.php" method="$_POST">
+            <form action="processa.php" method="POST">
                 <div class="form-container">
                     <div class="form-label">Código de autorização da prefeitura:</div>
                     <input type="text" name="codigo" \

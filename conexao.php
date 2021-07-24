@@ -1,13 +1,12 @@
 <?php
-$servername = "localhost";
-$username = "root";
+$serverName = "localhost";
+$userName = "root";
 $password = "";
-$dbname = "cityapp";
+$dataBaseName = "cityapp";
 
-// Cria conexão
-$conn = mysqli_connect($servername, $username, $password,$dbname);
+$connection = mysqli_connect($serverName, $userName, $password, $dataBaseName);
 
-// Verifica a conexão
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+if(!$connection){
+    die("Connection failed: ". mysqli_connect_error());
 }
+?>

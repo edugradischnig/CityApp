@@ -2,7 +2,7 @@ CREATE DATABASE cityapp;
 USE cityapp;
 
 CREATE TABLE usuarioComum(
-	cpf int(11) NOT NULL,
+	cpf varchar(11) NOT NULL,
     email varchar(50) NOT NULL,
     senha_hash varchar(255) NOT NULL,
     nome varchar(30) NOT NULL,
@@ -12,6 +12,7 @@ CREATE TABLE usuarioComum(
 
 CREATE TABLE usuarioPrefeitura(
 	id int(5) NOT NULL AUTO_INCREMENT,
+    codigo_autorizacao int(6) NOT NULL,
     email varchar (50) NOT NULL,
     senha_hash varchar(255) NOT NULL,
     nome varchar(35) NOT NULL,
