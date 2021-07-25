@@ -10,7 +10,8 @@ for ($i=0; $i < mysqli_num_rows($usuariosComuns); $i++) {
     $linha = mysqli_fetch_assoc($usuariosComuns);
     if(strval($_POST['email']) == $linha['email'] && (password_verify(strval($_POST['senha']), $linha['senha_hash']))){
         $_SESSION['email'] = strval($_POST['email']);
-        header("location: main.php");
+        $_SESSION['tipo'] = 'c';
+        header("location: main-cidadao.php");
     }
 }
 
@@ -22,10 +23,10 @@ for ($i=0; $i < mysqli_num_rows($usuariosPrefeitura); $i++) {
     $linha = mysqli_fetch_assoc($usuariosPrefeitura);
     if(strval($_POST['email']) == $linha['email'] && (password_verify(strval($_POST['senha']), $linha['senha_hash']))){
         $_SESSION['email'] = strval($_POST['email']);
-        header("location: main.php");
+        $_SESSION['tipo'] = 'p';
+        header("location: main-prefeitura.php");
     }
 }
-
 
 header("location: index.php");
 ?>

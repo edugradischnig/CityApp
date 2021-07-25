@@ -13,7 +13,8 @@ if(isset($_POST['cpf'])){
     $query = "insert into usuariocomum (cpf, email, senha_hash, nome, sobrenome) values (".$cpf.",'".$email."','".$hash."','".$nome."','".$sobrenome."')";
     mysqli_query($connection, $query);
     $_SESSION['email'] = $email;
-    header("location: main.php");
+    $_SESSION['tipo'] = 'c';
+    header("location: main-cidadao.php");
 
 }else if(isset($_POST['codigo'])){
     $codigo = intval($_POST['codigo']);
@@ -25,7 +26,8 @@ if(isset($_POST['cpf'])){
     $query = "insert into usuarioprefeitura (codigo_autorizacao, email, senha_hash, nome, estado) values (".$codigo.",'".$email."','".$hash."','".$cidade."','".$estado."')";
     mysqli_query($connection, $query);
     $_SESSION['email'] = $email;
-    header("location: main.php");
+    $_SESSION['tipo'] = 'p';
+    header("location: main-prefeitura.php");
 
 }else{
     header("location: erro-cadastro.php");

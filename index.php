@@ -47,7 +47,11 @@
 
 <?php
 session_start();
-if(isset($_SESSION['email'])){
-    header("location: main.php");
+if(isset($_SESSION['tipo'])){
+    if($_SESSION['tipo'] == 'c'){
+        header("location: main-cidadao.php");
+    }else if($_SESSION['tipo'] == 'p'){
+        header("location: main-prefeitura.php");
+    }
 }
 ?>

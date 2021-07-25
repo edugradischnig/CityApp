@@ -1,3 +1,12 @@
+<?php
+session_start();
+if($_SESSION['tipo'] == 'p'){
+    header("location: sem-permissao.php");
+}if(!isset($_SESSION['email'])){
+    header("location: sem-permissao.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -48,7 +57,7 @@
             </div>
             <div id="info-usuario-logado">
                 <?php
-                session_start();
+                //session_start();
                 echo '<h1>Seja bem vindo, '.$_SESSION['email']."<a id='sair' href='finalizarSessao.php'> [Sair]</a></h1>";
                 echo "";
                 ?>
