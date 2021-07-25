@@ -73,7 +73,6 @@ if($_SESSION['tipo'] == 'p'){
     
     <div class="topo__usuario">
         <div class="envelope envelope--m display-flex" style="padding:16px 18px; justify-content:space-between" id="info-usuario-logado">
-            <?php //session_start();?>
             <p>Seja bem vindo, <?=$_SESSION['email']?>.</p>
             <a id=sair href="finalizarSessao.php">Sair</a>
         </div>
@@ -111,6 +110,7 @@ if($_SESSION['tipo'] == 'p'){
             <div class="box" style="padding:32px 24px; margin-top:16px;"> 
                 <h1 class='texto-titulo texto-titulo--h1' style='color:var(--cor-principal-5)'><?=$linha['resumo']?></h1>
                 <p class='texto-corpo' style='margin-top:8px; color:var(--cor-branco-2);'><?=$linha['descricao']?></p>
+                <p class='texto-corpo' style='margin-top:8px; color:var(--cor-branco-2);'>Criado por <?=$linha['email_autor']?></p>
                 <h2 class='texto-titulo texto-titulo--h2' style='margin-top:16px; color:var(--cor-principal-3);'>Localização</h2>;
                 <div class='objeto-recipiente' style='border:2px solid #fff; margin-top:8px;'>
                     <iframe src="https://maps.google.com/maps?q=<?=$linha['y_coord'].",".$linha['x_coord']."&z=15&output=embed"?>" class="objeto-conteudo"></iframe>";
@@ -126,30 +126,6 @@ if($_SESSION['tipo'] == 'p'){
             </div>
             <?php } ?>
                 
-                
-                
-                <!--ve ai xiniga 
-                    <form>
-                        <div class="display-flex" style="flex-wrap:wrap; margin:-8px">
-                            <div class="votacao display-flex">
-                                <input type="radio" name="votacao">
-                                <span style="margin-left:8px; color:var(--cor-branco-1)">Arrumar o asfalto</span>
-                            </div>
-                            <div class="votacao display-flex">
-                                <input type="radio" name="votacao">
-                                <span style="margin-left:8px; color:var(--cor-branco-1)">Arrumar o asfalto</span>
-                            </div>
-                        </div>
-                        <input type="submit" value="Votar" class="botao mi--a" style="margin-top:16px; background-color:var(--cor-principal-3);">
-                    </form>
-                </div>
-            </div>
-
-            <div class="box" style="padding:32px 24px; margin-top:16px;">
-                <h1 class="texto-titulo texto-titulo--h1" style="color:var(--cor-principal-5)">Votação</h1>
-                <p class="texto-corpo" style="margin-top:8px; color:var(--cor-branco-2);">A cidade de Feliz tem varios probleminhas nos ajude e vote no problema que deve ser resolvido com maior urgencia se nao vou comer o cu do xiniginha.</p>
-                <h2 class="texto-titulo texto-titulo--h2" style="margin-top:16px; color:var(--cor-principal-3);">Votação encerrada.</h2>
-            </div> !-->
         </div>
     </section>
 

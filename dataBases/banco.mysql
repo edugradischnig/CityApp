@@ -32,3 +32,9 @@ CREATE TABLE acao(
     y_coord varchar(30) NOT NULL,
     PRIMARY KEY(id)
 );
+
+CREATE TABLE ultimo_index(
+    id int(1),
+	counter varchar(2)
+);
+INSERT INTO ultimo_index (id, counter) VALUES (1,0); 
