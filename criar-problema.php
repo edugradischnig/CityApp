@@ -1,21 +1,17 @@
-<?php
-session_start();
-if($_SESSION['tipo'] == 'p'){
-    header("location: sem-permissao.php");
-}if(!isset($_SESSION['email'])){
-    header("location: sem-permissao.php");
-}
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preload" href="fonts/MaterialIconsRound-Regular.woff2" as="font">
+    <link rel="stylesheet" href="css/core/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
-    <title>Document</title>
 </head>
 <body>
     <form method="$_POST" action="processar-acoes-cidadao.php">
