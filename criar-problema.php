@@ -26,7 +26,7 @@
         <div class="box" style="padding:32px 24px; margin-top:16px;">
             <h1 class="texto-titulo texto-titulo--h1" style="color:var(--cor-principal-5)">Escolha uma localização:</h1>
             <div class="objeto-recipiente" id="map" style="border:2px solid #fff; margin-top:8px;">
-                <div id='map' style='width: 400px; height: 300px;'></div>
+                <div id='map'></div>
             </div>
             <div id="info" style="color:#fff"></div>
         </div>
