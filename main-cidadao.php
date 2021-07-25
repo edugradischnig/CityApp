@@ -66,10 +66,10 @@ if($_SESSION['tipo'] == 'p'){
             <nav class="topo__item">
                 <ul style="margin:-8px">
                     <li style="padding:8px;">
-                        <a href="" class="topo__link">Relatar um problema</a>
+                        <a href="criar-problema.php" class="topo__link">Relatar um problema</a>
                     </li>
                     <li style="padding:8px;">
-                        <a href="" class="topo__link">Solicitar melhorias</a>
+                        <a href="criar-melhoria.php" class="topo__link">Solicitar melhorias</a>
                     </li>
                 </ul>
             </nav>
