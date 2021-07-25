@@ -16,7 +16,7 @@ if($_SESSION['tipo'] == 'p'){
     <title>Document</title>
 </head>
 <body>
-    <form method="$_POST" action="processar-acoes-cidadao.php">
+    <form method="$_POST" action="processar-melhoria-cidadao.php">
         <label for="cabecalho_melhoria">Resumo da melhoria:</label>
         <input type="text" name="cabecalho_melhoria"> <br>
 

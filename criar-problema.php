@@ -14,12 +14,12 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
-    <form method="$_POST" action="processar-acoes-cidadao.php">
+    <form action="processar-problema-cidadao.php" method="POST">
         <label for="cabecalho">Resumo do problema:</label>
-        <input type="text" name="cabecalho"> <br>
+        <input type="text" name="cabecalho" required> <br>
 
         <label for="detalhe">Detalhe o problema e o que você quer que seja feito:</label>
-        <input type="text" name="detalhe"> <br>
+        <input type="text" name="detalhe" required> <br>
 
         
         <section class="envelope envelope--p">
@@ -31,8 +31,16 @@
             <div id="info" style="color:#fff"></div>
         </div>
         </section>
+        <p>Dica: Selecione e dê zoom sobre o local ou possível local do problema.</p>
 
-        <script>
+        <!-- Gambiarra pra pegar as coordenadas!-->
+        <p id="x" style="visibility: hidden;"> </p>
+        <p id="y" style="visibility: hidden;"> </p>
+
+        <input type="submit" value="Relatar problema">
+    </form>
+
+    <script>
             mapboxgl.accessToken = 'pk.eyJ1IjoicGFzdGNob3dkZXIxNyIsImEiOiJja3JpYWhtdnYwdGFkMm5wa2g1bzM0ZTc2In0.DYj0Q-xSqOsK_lHVf9wTKA';
             var map = new mapboxgl.Map({
                 container: 'map',
@@ -44,16 +52,19 @@
             var marker = new mapboxgl.Marker();
 
             function add_marker (event) {
-            var coordinates = event.lngLat;
-            console.log('Lng:', coordinates.lng, 'Lat:', coordinates.lat);
-            marker.setLngLat(coordinates).addTo(map);
+                var coordinates = event.lngLat;
+                console.log('Lng:', coordinates.lng, 'Lat:', coordinates.lat);
+
+                document.getElementById("x").innerHTML = String(coordinates.lng);
+                document.getElementById("y").innerHTML = String(coordinates.lat);
+
+                document.cookie = "x="+String(coordinates.lng);
+                document.cookie = "y="+String(coordinates.lat);
+
+                marker.setLngLat(coordinates).addTo(map);
             }
 
             map.on('click', add_marker);
         </script>
-
-
-        <input type="submit" value="Relatar problema">
-    </form>
 </body>
 </html>

@@ -19,3 +19,16 @@ CREATE TABLE usuarioPrefeitura(
     estado varchar (30) NOT NULL,
     PRIMARY KEY (id)
 );
+
+CREATE TABLE acao(
+    id int(5) NOT NULL AUTO_INCREMENT,
+    tipo varchar(1) NOT NULL,
+    resumo varchar (50) NOT NULL,
+    descricao varchar (300) NOT NULL,
+    resolvido BOOLEAN NOT NULL,
+    email_autor varchar(50) NOT NULL,
+    cidade varchar(35) NOT NULL,
+    x_coord varchar(30) NOT NULL,
+    y_coord varchar(30) NOT NULL,
+    PRIMARY KEY(id)
+);
