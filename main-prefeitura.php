@@ -48,6 +48,8 @@ if($_SESSION['tipo'] == 'c'){
         #sair{text-decoration: none; color: #FF6A6A}
         #sair:hover{color: red}
 
+        .display-none {display:none; }
+
     </style>
 </head>
 
@@ -82,23 +84,6 @@ if($_SESSION['tipo'] == 'c'){
         <div style="padding-top:60px;">
 
             <?php
-            function resolver($id){
-                include_once "conexao.php";
-
-                $query = "SELECT * FROM acao";
-                $resultado = mysqli_query($connection, $query);
-
-                for ($i=0; $i < mysqli_num_rows($resultado); $i++) {
-                    $linha = mysqli_fetch_assoc($resultado);
-
-                    if($id == $linha['id']){
-                        $novoQuery = "UPDATE TABLE acao SET resolvido=true WHERE id='".$linha['id']."'";
-                        mysqli_query($connection, $novoQuery);
-                    }
-                }
-                var_dump($count);
-                echo "<h1>CARALHOPOOOOOOOOOO</h1>".$id;
-            }
             
             $query = "SELECT * FROM acao";
             $resultado = mysqli_query($connection, $query);
@@ -111,40 +96,19 @@ if($_SESSION['tipo'] == 'c'){
             <div class="box" style="padding:32px 24px; margin-top:16px;">
                 <h1 class="texto-titulo texto-titulo--h1" style="color:var(--cor-principal-5)"><?=$linha['resumo']?></h1>
                 <p class="texto-corpo" style="margin-top:8px; color:var(--cor-branco-2);"><?=$linha['descricao']?></p>
-                <h2 class="texto-titulo texto-titulo--h2" style="margin-top:16px; color:var(--cor-principal-3);">Localização</h2>
-                <div class="objeto-recipiente" style="border:2px solid #fff; margin-top:8px;">
-                    <iframe src="https://maps.google.com/maps?q=<?=$linha['y_coord'].",".$linha['x_coord']."&z=15&output=embed"?>" class="objeto-conteudo"></iframe>";
-                </div>
                 <?php
-                if($linha['resolvido']){
-                    echo "<p class='texto-corpo' style='margin-top:8px; color:var(--cor-branco-2);'>Que bom que você já resolveu este problema!</p>";
-                }else{
-                    echo "<button class='botao mi--a' style='margin-top:16px; background-color:var(--cor-principal-3);' data-icone='check'>Resolver</button>";
-                }
-                ?>
-                
+                if($linha['resolvido'] == 1){ ?>
+                    <p class="texto-titulo texto-titulo--h2" style="margin-top:16px; color:var(--cor-principal-3);">Problema resolvido!</p>
+                <?php }else{ ?>
+                    <h2 class="<?="mapa-".$linha['id']?> texto-titulo texto-titulo--h2" style="margin-top:16px; color:var(--cor-principal-3);">Localização</h2>
+                    <div class="<?="mapa-".$linha['id']?> objeto-recipiente" style="border:2px solid #fff; margin-top:8px;">
+                        <iframe src="https://maps.google.com/maps?q=<?=$linha['y_coord'].",".$linha['x_coord']."&z=15&output=embed"?>" class="objeto-conteudo"></iframe>
+                    </div>
+                    <button id=<?=$linha['id']?> class='resolver botao mi--a' style='margin-top:16px; background-color:var(--cor-principal-3);' data-icone='check'>Resolver</button>
+                    <p class="temp texto-titulo texto-titulo--h2 display-none" style="margin-top:16px; color:var(--cor-principal-3);">Problema resolvido!</p>
+                    <?php }?>      
             </div>
             <?php } ?>
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             <div class="box" style="padding:32px 24px; margin-top:16px;">
                 <h1 class="texto-titulo texto-titulo--h1" style="color:var(--cor-principal-5)">Votação</h1>
@@ -167,6 +131,21 @@ if($_SESSION['tipo'] == 'c'){
     </section>
 
     <script src="js/core/jquery-3.5.1.min.js"></script>
+
+    <script>
+        $(".resolver").on("click", function() {
+            var id = $(this).attr("id");
+            $this = $(this);
+            $mapa = $(".mapa-" + id);
+            $.post("ajax.php", {
+                id: id 
+            }, function(data, status){
+                $this.addClass("display-none");
+                $mapa.addClass("display-none");
+                $(".temp").removeClass("display-none");
+            }  )
+        });
+    </script>
 
     <script>
         $(function(){
