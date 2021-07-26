@@ -42,6 +42,8 @@ if($_SESSION['tipo'] == 'p'){
 
         .box + .box { margin-top:16px; }
 
+        .display-none {display:none; }
+
         .votacao { padding:8px; }
 
         #sair{text-decoration: none; color: #FF6A6A}
@@ -110,19 +112,17 @@ if($_SESSION['tipo'] == 'p'){
             <div class="box" style="padding:32px 24px; margin-top:16px;"> 
                 <h1 class='texto-titulo texto-titulo--h1' style='color:var(--cor-principal-5)'><?=$linha['resumo']?></h1>
                 <p class='texto-corpo' style='margin-top:8px; color:var(--cor-branco-2);'><?=$linha['descricao']?></p>
-                <p class='texto-corpo' style='margin-top:8px; color:var(--cor-branco-2);'>Criado por <?=$linha['email_autor']?></p>
-                <h2 class='texto-titulo texto-titulo--h2' style='margin-top:16px; color:var(--cor-principal-3);'>Localização</h2>;
-                <div class='objeto-recipiente' style='border:2px solid #fff; margin-top:8px;'>
-                    <iframe src="https://maps.google.com/maps?q=<?=$linha['y_coord'].",".$linha['x_coord']."&z=15&output=embed"?>" class="objeto-conteudo"></iframe>";
-                </div>
-                
-            <?php
-                if($linha['resolvido']){
-                    echo "<p class='texto-corpo' style='margin-top:8px; color:var(--cor-branco-2);'>Este problema já foi resolvido pela prefeitura!</p>";
-                }else{
-                    echo "<p class='texto-corpo' style='margin-top:8px; color:var(--cor-branco-2);'>Este problema ainda não foi resolvido pela prefeitura.</p>";
-                }
-            ?>
+                <p class='texto-legenda' style='margin-top:8px; color:var(--cor-branco-1);'>Criado por <?=$linha['email_autor']?></p>
+                <?php 
+                if($linha['resolvido'] == 1){ ?>
+                    <p class="texto-titulo texto-titulo--h2" style="margin-top:16px; color:var(--cor-principal-3);">O problema foi resolvido pela prefeitura!</p>
+                <?php }else{ ?>
+                    <h2 class='texto-titulo texto-titulo--h2' style='margin-top:16px; color:var(--cor-principal-3);'>Localização</h2>;
+                    <div class='objeto-recipiente' style='border:2px solid #fff; margin-top:8px;'>
+                        <iframe src="https://maps.google.com/maps?q=<?=$linha['y_coord'].",".$linha['x_coord']."&z=15&output=embed"?>" class="objeto-conteudo"></iframe>";
+                    </div>
+                    <p class='texto-corpo' style='margin-top:8px; color:var(--cor-branco-2);'>Este problema ainda não foi resolvido pela prefeitura.</p>
+                <?php } ?>
             </div>
             <?php } ?>
                 
