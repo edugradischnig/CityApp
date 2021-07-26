@@ -57,7 +57,7 @@ if($_SESSION['tipo'] == 'c'){
     <header class="topo">
         <nav class="topo__conteudo envelope envelope--m">
             <div class="topo__logo display-flex">
-                <h1 class="texto-titulo texto-titulo--h1">CityApp</h1>
+            <a href="index.php"><h1 class="texto-titulo texto-titulo--h1">CityApp</h1></a>
                 <i class="topo__icone mi">maps_home_work</i>
             </div>
             <button class="topo__botao botao-cadastro mi--b" data-icone="add">Publicação</button>
