@@ -40,14 +40,29 @@
         </div>
     </section>
 
-    <script>
+	<script>
             mapboxgl.accessToken = 'pk.eyJ1IjoicGFzdGNob3dkZXIxNyIsImEiOiJja3JpYWhtdnYwdGFkMm5wa2g1bzM0ZTc2In0.DYj0Q-xSqOsK_lHVf9wTKA';
+
             var map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
                 center: [-51.30038143450929, -29.3829],
             zoom: 13
             });
+
+            if (navigator.geolocation){ //se o broser suportar geolocalizacao
+	    	    navigator.geolocation.getCurrentPosition(locationCallback);//pegar localizacao e passar pro callback se o user der allow
+	        }
+
+            //mover mapa p/ localizacao do client
+	        function locationCallback(position){
+		        const lat = position.coords.latitude;
+		        const long = position.coords.longitude;
+
+		        map.flyTo({
+                    center: [long, lat]
+                })
+	        }
 
             var marker = new mapboxgl.Marker();
 
