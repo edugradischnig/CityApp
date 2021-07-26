@@ -11,6 +11,10 @@
 
 <body>
     <section class="envelope envelope--p">
+        <div class="topo__logo display-flex">
+                <a href="index.php"><h1 class="texto-titulo texto-titulo--h1">CityApp</h1></a>
+                <i class="topo__icone mi">maps_home_work</i>
+        </div>
         <header class="display-flex">    
             <h1 class="texto-titulo texto-titulo--h1">Como você deseja se cadastrar?</h1>
         </header>

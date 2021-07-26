@@ -15,6 +15,10 @@
 </head>
 <body>  
     <section class="envelope envelope--p">
+        <div class="topo__logo display-flex">
+                <a href="index.php"><h1 class="texto-titulo texto-titulo--h1">CityApp</h1></a>
+                <i class="topo__icone mi">maps_home_work</i>
+        </div>
         <div class="box" style="padding:32px 24px; margin-top:16px;">
             <h1 class="texto-titulo texto-titulo--h1" style="color:var(--cor-principal-5)">Relatar um problema</h1>
             <form action="processar-problema-cidadao.php" method="POST">
